@@ -4,7 +4,9 @@ import React, { Component } from "react";
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import Template from './components/templates/template';
+// Custom components
+import Login from 'templates/login/login';
+import Template from 'templates/default/template';
 
 const theme = createMuiTheme({
   typography: {
@@ -17,6 +19,7 @@ class App extends Component {
     return (
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
+        {/* <Login /> */}
         <Template />
       </MuiThemeProvider>
     );

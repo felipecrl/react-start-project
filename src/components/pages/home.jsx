@@ -36,11 +36,10 @@ class Home extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
     const { open } = this.state;
 
     return (
-      <div className={classes.root}>
+      <div>
         <Dialog open={open} onClose={this.handleClose}>
           <DialogTitle>Super Secret Password</DialogTitle>
           <DialogContent>

@@ -4,11 +4,19 @@ import PropTypes from "prop-types";
 // Material UI
 import Button from "@material-ui/core/Button";
 
-function Buttons({ label, variant, color, size, disabled, fullWidth, onClick }) {
+function Buttons({
+  label,
+  variant,
+  color,
+  size,
+  disabled,
+  fullWidth,
+  onClick
+}) {
   return (
-    <Button 
-      variant={variant} 
-      color={color} 
+    <Button
+      variant={variant}
+      color={color}
       size={size ? size : "medium"}
       disabled={disabled}
       fullWidth={fullWidth}

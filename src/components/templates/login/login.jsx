@@ -8,7 +8,7 @@ import { withStyles } from "@material-ui/core/styles";
 import LoginCard from "organisms/loginCard/login-card";
 
 // Styles
-import styles from './styles';
+import styles from "./styles";
 
 class Login extends Component {
   state = {

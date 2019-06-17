@@ -16,7 +16,7 @@ import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import { Button, Input } from "atoms";
 
 // Styles
-import styles from './styles';
+import styles from "./styles";
 
 function LoginForm({ handlers, state, classes }) {
   return (

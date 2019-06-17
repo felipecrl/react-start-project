@@ -10,7 +10,7 @@ import { Label } from "atoms";
 import LoginForm from "molecules/loginForm/login-form";
 
 // Styles
-import styles from './styles';
+import styles from "./styles";
 
 function LoginCard({ handlers, state, classes }) {
   return (
@@ -22,10 +22,10 @@ function LoginCard({ handlers, state, classes }) {
       className={classes.bgLogin}
     >
       <Grid item xs={4}>
-        <Label variant="h4" align="center" gutterBottom color='textPrimary'>
+        <Label variant="h4" align="center" gutterBottom color="textPrimary">
           Fazer login
         </Label>
-        
+
         <LoginForm handlers={handlers} state={state} />
       </Grid>
     </Grid>

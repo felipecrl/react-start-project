@@ -3,7 +3,8 @@ const HtmlWebPackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 const PATHS = {
-  build: path.resolve(__dirname, "./dist")
+  build: path.resolve(__dirname, "./dist"),
+  images: path.resolve(__dirname, "./src/assets/img")
 };
 
 module.exports = () => {
@@ -85,8 +86,7 @@ module.exports = () => {
       }),
       new CopyPlugin([
         { from: "./public/manifest.json", to: PATHS.build },
-        { from: "./public/favicon.ico", to: PATHS.build },
-        { from: "./src/assets/img", to: PATHS.build + "/assets/img" }
+        { from: "./public/favicon.ico", to: PATHS.build }
       ])
     ]
   };

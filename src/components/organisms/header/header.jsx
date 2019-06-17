@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import classNames from 'classnames';
+import classNames from "classnames";
 
 // Material UI
 import { withStyles } from "@material-ui/core/styles";
@@ -14,7 +14,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 
 // Styles
-import styles from './styles';
+import styles from "./styles";
 
 function Header({ handlers, state, classes }) {
   const menuOpen = Boolean(state.anchorEl);
@@ -23,7 +23,7 @@ function Header({ handlers, state, classes }) {
     <AppBar
       position="fixed"
       className={classNames(classes.appBar, {
-        [classes.appBarShift]: state.open,
+        [classes.appBarShift]: state.open
       })}
     >
       <Toolbar disableGutters>
@@ -32,13 +32,17 @@ function Header({ handlers, state, classes }) {
           aria-label="Open drawer"
           onClick={handlers.handleDrawerOpen}
           className={classNames(classes.menuButton, {
-            [classes.hide]: state.open,
+            [classes.hide]: state.open
           })}
         >
           <MenuIcon />
         </IconButton>
 
-        <Typography variant="h6" color="inherit" className={!state.open ? classes.grow : classes.opened}>
+        <Typography
+          variant="h6"
+          color="inherit"
+          className={!state.open ? classes.grow : classes.opened}
+        >
           Title
         </Typography>
 
@@ -50,7 +54,7 @@ function Header({ handlers, state, classes }) {
         >
           <AccountCircle />
         </IconButton>
-        
+
         <Menu
           id="menu-appbar"
           anchorEl={state.anchorEl}

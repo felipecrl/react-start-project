@@ -12,7 +12,7 @@ import MenuSide from "organisms/menuSide/menu-side";
 import Routes from "../../../routes/routes";
 
 // Styles
-import styles from './styles';
+import styles from "./styles";
 
 class Template extends Component {
   state = {
@@ -47,7 +47,7 @@ class Template extends Component {
 
   render() {
     const { classes } = this.props;
-    
+
     return (
       <div className={classes.root}>
         <Header state={this.state} handlers={this.handlers} />

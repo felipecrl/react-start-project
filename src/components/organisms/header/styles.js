@@ -2,13 +2,14 @@ const drawerWidth = 240;
 
 const styles = theme => ({
   appBar: {
-    background: "url(assets/img/bg.png) 0 0 repeat",
+    background: "url(./src/assets/img/bg.png) 0 0 repeat",
     zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(["width", "margin"], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
     }),
-    boxShadow: "0 0 0 0"
+    boxShadow: "0 0 0 0",
+    borderBottom: "1px solid rgba(0, 0, 0, 0.12)"
   },
   appBarShift: {
     marginLeft: drawerWidth,

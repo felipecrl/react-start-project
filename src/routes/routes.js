@@ -9,6 +9,7 @@ import PageNotFound from "pages/page-not-found";
 const Routes = () => (
   <Switch>
     <Route exact path="/" component={Home} />
+    <Route exact path="/home" component={Home} />
     <Route path="/about" component={About} />
     <Route path="*" component={PageNotFound} />
   </Switch>

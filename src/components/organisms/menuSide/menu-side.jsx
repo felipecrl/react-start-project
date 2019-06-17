@@ -6,20 +6,19 @@ import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import IconButton from "@material-ui/core/IconButton";
-import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+
+// Custom Components
+import { Icon } from "atoms";
 
 // Styles
 import styles from "./styles";
 
-function MenuSide({ handlers, state, classes, theme }) {
+function MenuSide({ handlers, state, classes }) {
   return (
     <Drawer
       variant="permanent"
@@ -37,23 +36,17 @@ function MenuSide({ handlers, state, classes, theme }) {
     >
       <div className={classes.toolbar}>
         <IconButton onClick={handlers.handleDrawerClose}>
-          {theme.direction === "rtl" ? (
-            <ChevronRightIcon />
-          ) : (
-            <ChevronLeftIcon />
-          )}
+          <Icon icon="chevron_left" color="primary" />
         </IconButton>
       </div>
       <Divider />
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        <ListItem button>
+          <ListItemIcon>
+            <Icon icon="home" color="primary" />
+          </ListItemIcon>
+          <ListItemText primary="Home" />
+        </ListItem>
       </List>
     </Drawer>
   );
@@ -62,8 +55,7 @@ function MenuSide({ handlers, state, classes, theme }) {
 MenuSide.propTypes = {
   handlers: PropTypes.object.isRequired,
   state: PropTypes.object.isRequired,
-  classes: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles, { withTheme: true })(MenuSide);
+export default withStyles(styles)(MenuSide);

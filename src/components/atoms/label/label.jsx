@@ -12,7 +12,8 @@ function Label({
   inline,
   noWrap,
   paragraph,
-  gutterBottom
+  gutterBottom,
+  classes
 }) {
   return (
     <Typography
@@ -23,6 +24,7 @@ function Label({
       noWrap={noWrap}
       paragraph={paragraph}
       gutterBottom={gutterBottom}
+      classes={classes}
     >
       {children}
     </Typography>
@@ -40,7 +42,8 @@ Label.propTypes = {
   inline: PropTypes.bool,
   noWrap: PropTypes.bool,
   paragraph: PropTypes.bool,
-  gutterBottom: PropTypes.bool
+  gutterBottom: PropTypes.bool,
+  classes: PropTypes.object
 };
 
 export default Label;

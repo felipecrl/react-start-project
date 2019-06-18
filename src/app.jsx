@@ -8,7 +8,11 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 // import Login from "templates/login/login";
 import Template from "templates/default/template";
 
+// Styles
+import global from "./assets/styles/global";
+
 const theme = createMuiTheme({
+  ...global,
   typography: {
     useNextVariants: true
   }

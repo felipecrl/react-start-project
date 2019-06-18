@@ -8,7 +8,6 @@ import configureStore from "config/store";
 import * as serviceWorker from "./serviceWorker";
 
 import App from "./app";
-import "./assets/sass/index.scss";
 
 const store = configureStore();
 

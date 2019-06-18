@@ -1,10 +1,22 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+import LazyImport from "../config/lazy-import";
 
 // Pages
-import Dashboard from "pages/dashboard/dashboard";
-import About from "pages/about";
-import PageNotFound from "pages/page-not-found";
+const Dashboard = LazyImport({
+  loader: () =>
+    import("pages/dashboard/dashboard" /* webpackChunkName: 'dashboard' */)
+});
+
+const About = LazyImport({
+  loader: () =>
+    import("pages/about" /* webpackChunkName: 'about' */)
+});
+
+const PageNotFound = LazyImport({
+  loader: () =>
+    import("pages/page-not-found" /* webpackChunkName: 'notfound' */)
+});
 
 const Routes = () => (
   <Switch>

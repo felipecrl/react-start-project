@@ -11,10 +11,6 @@ module.exports = () => {
   return {
     devtool: "eval-source-map",
     entry: "./src/index.js",
-    output: {
-      filename: "bundle.js",
-      path: PATHS.build
-    },
     resolve: {
       extensions: [".web.js", ".mjs", ".js", ".json", ".web", ".jsx"],
       alias: {
@@ -63,18 +59,6 @@ module.exports = () => {
               }
             }
           ]
-        },
-        {
-          test: /\.(woff(2)?|ttf|eot|otf)(\?v=\d+\.\d+\.\d+)?$/,
-          use: [
-            {
-              loader: "file-loader",
-              options: {
-                name: "[name].[ext]",
-                outputPath: "fonts/"
-              }
-            }
-          ]
         }
       ]
     },
@@ -88,6 +72,17 @@ module.exports = () => {
         { from: "./public/manifest.json", to: PATHS.build },
         { from: "./public/favicon.ico", to: PATHS.build }
       ])
-    ]
+    ],
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          commons: {
+            test: /[\\/]node_modules[\\/]/,
+            name: 'vendors',
+            chunks: 'all'
+          }
+        }
+      }
+    },
   };
 };
